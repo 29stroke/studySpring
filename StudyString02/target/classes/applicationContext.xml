@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <bean id="person" name="person01,person02" class="com.zzx.spring.Person" scope="prototype">
+
+            <constructor-arg name="name" value="zzx"></constructor-arg>
+            <constructor-arg name="age" type="int" value="25"></constructor-arg>
+            <constructor-arg index="2" ref="food"></constructor-arg>
+
+            <!-- 
+            <property name="name" value="zzx"></property>
+            <property name="age" value="25"></property>
+            <property name="food" ref="food"></property>
+            -->
+        </bean>
+        
+        <bean id="food" class="com.zzx.spring.Food">
+            <constructor-arg name="name" value="xxxx"></constructor-arg>
+        </bean>
+        <!--  ???
+        <bean id="food" class="com.zzx.spring.Food" p:name="c- namespace"></bean>
+        -->
+        
+        <import resource="applicationContextLoopDI.xml"/>
+</beans>

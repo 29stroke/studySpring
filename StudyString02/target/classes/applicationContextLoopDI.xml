@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <!-- 
+        <bean id="loopDI01" class="com.zzx.spring.LoopDI01">
+            <property name="name" value="zzx01"></property>
+            <property name="number" value="25"></property>
+            <property name="loopDI02" ref="loopDI02"></property>
+        </bean>
+        
+        <bean id="loopDI02" class="com.zzx.spring.LoopDI02" scope="prototype">
+            <property name="name" value="zzx02"></property>
+            <property name="number" value="26"></property>
+            <property name="loopDI03" ref="loopDI03"></property>
+        </bean>
+        
+        <bean id="loopDI03" class="com.zzx.spring.LoopDI03" scope="prototype">
+            <property name="name" value="zzx03"></property>
+            <property name="number" value="27"></property>
+            <property name="loopDI01" ref="loopDI01"></property>
+        </bean>
+        -->
+        
+        
+        <bean id="loopDI01" class="com.zzx.spring.LoopDI01">
+            <constructor-arg name="name" value="zzx01"></constructor-arg>
+            <constructor-arg name="number" value="25"></constructor-arg>
+            <constructor-arg name="loopDI02" ref="loopDI02"></constructor-arg>
+        </bean>
+        
+        <bean id="loopDI02" class="com.zzx.spring.LoopDI02">
+            <constructor-arg name="name" value="zzx02"></constructor-arg>
+            <constructor-arg name="number" value="26"></constructor-arg>
+            <constructor-arg name="loopDI03" ref="loopDI03"></constructor-arg>
+        </bean>
+        
+        <bean id="loopDI03" class="com.zzx.spring.LoopDI03">
+            <constructor-arg name="name" value="zzx03"></constructor-arg>
+            <constructor-arg name="number" value="27"></constructor-arg>
+            <constructor-arg name="loopDI01" ref="loopDI01"></constructor-arg>
+        </bean>
+</beans>
