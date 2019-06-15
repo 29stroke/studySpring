@@ -12,6 +12,9 @@ public class Person {
 		this.age = age;
 		this.food = food;
 	}
+	public Person() {
+		super();
+	}
 
 	public String getName() {
 		return name;
