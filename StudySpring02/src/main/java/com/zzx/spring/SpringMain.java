@@ -46,13 +46,7 @@ public class SpringMain {
 		System.out.println("---------------------------------------------------------------------");
 
 		Food food = ctx.getBean("food", Food.class);
-		System.out.println(ToStringBuilder.reflectionToString(food.getPropertiesName(), ToStringStyle.MULTI_LINE_STYLE));
-		System.out.println("---------------------------------------------------------------------");
-		System.out.println(ToStringBuilder.reflectionToString(food.getListName(), ToStringStyle.MULTI_LINE_STYLE));
-		System.out.println("---------------------------------------------------------------------");
-		System.out.println(ToStringBuilder.reflectionToString(food.getMapName(), ToStringStyle.MULTI_LINE_STYLE));
-		System.out.println("---------------------------------------------------------------------");
-		System.out.println(ToStringBuilder.reflectionToString(food.getSetName(), ToStringStyle.MULTI_LINE_STYLE));
+		System.out.println(ToStringBuilder.reflectionToString(food, ToStringStyle.MULTI_LINE_STYLE));
 
 
 	}
