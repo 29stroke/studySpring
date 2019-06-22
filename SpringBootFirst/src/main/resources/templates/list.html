@@ -1,3 +1,20 @@
 <html>
-<h1 th:text="${name}">hi</h1>
+<!-- 
+	<h1 th:text="${name}">hi</h1>
+ -->
+	<body>
+		<a>City add...................</a>
+		<hr>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+			</tr>
+			<tr th:each="city : ${cityList}">
+			<!-- EL JSTL -->
+				<td th:text="${city.id}" />
+				<td th:text="${city.name}" />
+			</tr>
+		</table>
+	</body>
 </html>
