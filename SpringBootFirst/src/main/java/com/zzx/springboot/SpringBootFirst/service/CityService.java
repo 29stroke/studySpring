@@ -48,4 +48,18 @@ public class CityService {
 		return true;
 	}
 
+	public List<City> delById(Integer id) {
+		System.out.println("CityService.delById start.");
+		List<City> citylist = cityDao.delById(id);
+		System.out.println("CityService.delById end.");
+		return citylist;
+	}
+
+	public List<City> updByName(Integer id, String name) {
+		System.out.println("CityService.updByName start.");
+		List<City> citylist = cityDao.updByName(id, name);
+		System.out.println("CityService.updByName end.");
+		return citylist;
+	}
+
 }

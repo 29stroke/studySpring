@@ -41,4 +41,23 @@ public class CityDao {
 		return city;
 	}
 
+	public List<City> delById(Integer id) {
+		System.out.println("CityDao.delById start.");
+		map.remove(id);
+		ArrayList<City> cityList = new ArrayList<>(map.values());
+		System.out.println("CityDao.delById end.");
+		return cityList;
+	}
+
+	public List<City> updByName(Integer id, String name) {
+		System.out.println("CityDao.updByName start.");
+		City city = new City();
+		city.setId(id);
+		city.setName(name);
+		map.put(id, city);
+		ArrayList<City> cityList = new ArrayList<>(map.values());
+		System.out.println("CityDao.updByName end.");
+		return cityList;
+	}
+
 }

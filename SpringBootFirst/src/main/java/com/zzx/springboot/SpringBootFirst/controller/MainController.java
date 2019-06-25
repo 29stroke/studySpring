@@ -28,8 +28,28 @@ public class MainController {
 		//map.addAttribute("name", "zzx");
 		
 		List<City> list = citySrv.findAll();
-		System.out.println("MainController.list end.");
 		map.addAttribute("cityList", list);
+		System.out.println("MainController.list end.");
+		return "list";
+	}
+	
+	@RequestMapping("/delete")
+	public String del(Model map, @RequestParam("id")Integer id) {
+		System.out.println("MainController.Del start.");
+		
+		List<City> list = citySrv.delById(id);
+		map.addAttribute("cityList", list);
+		System.out.println("MainController.Del end.");
+		return "list";
+	}
+	
+	@RequestMapping("/updata")
+	public String updata(Model map, @RequestParam("id")Integer id, @RequestParam("name")String name) {
+		System.out.println("MainController.updata start.");
+		
+		List<City> list = citySrv.updByName(id, name);
+		map.addAttribute("cityList", list);
+		System.out.println("MainController.updata end.");
 		return "list";
 	}
 	
